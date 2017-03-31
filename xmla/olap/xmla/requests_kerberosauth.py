@@ -131,7 +131,7 @@ class HTTPKerberosAuth(AuthBase):
             context = self.getContext(r)
             if context is None:
                 spn = self.get_spn(r)
-                result, context = self.gss_init(spn, self.gssflags)
+                result, context = self.gss_init(spn, None, self.gssflags)
                 if result < 1:
                     raise Excetion("gss_init returned result %d" % result)
 
